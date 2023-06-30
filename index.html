@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Responsive NavBar</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="nav-bar-container">
+        <nav>
+          <div class="links-container" id="links-container">
+            <div class="btn-close-container" onclick="closeMenu()">
+              <button id="btn-close">&#215;</button>
+            </div>
+
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact-us</a>
+          </div>
+
+          <button id="btn-menu-hamburger" onclick="showMenu()">
+            <span class="top"></span>
+            <span class="middle"></span>
+            <span class="bottom"></span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
+</html>

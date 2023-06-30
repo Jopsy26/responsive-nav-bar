@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+header {
+    background: url("bg.png") no-repeat center;
+    background-size: cover;
+    height: 400px;
+    position: relative;
+}
+
+header::before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, .4);
+}
+
+/* Barre de navigation */
+.nav-bar-container {
+    position: absolute;
+    top: 90%;
+    width: 100%;
+    padding: 0 3rem 0 3rem;
+}
+
+nav {
+    background-color: #dee2e6;
+    padding: 10px;
+    box-shadow: 5px 10px 10px #888888;
+}
+
+.links-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: #6c757d;
+    padding: 10px 20px 10px 20px;
+    position: relative;
+    z-index: 99;
+}
+
+/* Le background avec effet de chargement */
+a::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: aquamarine;
+    transition: width 1s;
+    z-index: -1;
+}
+
+a:hover::before {
+    width: 100%;
+}
+
+/* Le button Close Menu */
+#btn-close {
+    background-color: transparent;
+    border: none;
+    font-size: x-large;
+    color: #888888;
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.btn-close-container {
+    display: none;
+}
+
+/* Le button Hamburger */
+#btn-menu-hamburger {
+    padding: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+#btn-menu-hamburger span {
+    display: block;
+    border-bottom: 1px solid #6c757d;
+    width: 35px;
+    height: 5px;
+}
+
+.top, .middle {
+    margin-bottom: 5px;
+}
+
+.bottom {
+    margin-bottom: 3px;
+}
+
+/* PARTIE RESPONSIVE */
+@media screen and (max-width: 720px) {
+    .links-container {
+        position: fixed;
+        top: 0;
+        /* Valeur à modifier avec le JS */
+        left: -50%;
+        height: 100%;
+        width: 50%;
+        background-color: #dee2e6;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        /* Ajouter un effet de transition */
+        transition: left 1s;
+    }
+
+    .btn-close-container {
+        display: flex;
+        width: 100%;
+        justify-content: end;
+    }
+
+    a {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    #btn-menu-hamburger {
+        display: block;
+    }
+}
